@@ -1,4 +1,42 @@
-// src/pages/api/authen/users.ts
+// // pages/api/authen/users.ts
+
+// import { NextApiRequest, NextApiResponse } from 'next';
+// import UserService from '@/services/UserService';
+// import cors, { runMiddleware } from '@/lib/middleware';
+
+// export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+//   // Apply CORS middleware
+//   await runMiddleware(req, res, cors);
+
+//   switch (req.method) {
+//     case 'GET':
+//       try {
+//         const users = await UserService.getAllUsers();
+//         return res.status(200).json(users);
+//       } catch (error) {
+//         return res.status(500).json({ error: 'Failed to fetch users.' });
+//       }
+//     case 'POST':
+//       try {
+//         const user = await UserService.createUser(req.body);
+//         return res.status(201).json(user);
+//       } catch (error) {
+//         return res.status(400).json({ error: error.message });
+//       }
+//     case 'PUT':
+//       // Handle PUT request (e.g., update user)
+//       break;
+//     case 'DELETE':
+//       // Handle DELETE request (e.g., delete user)
+//       break;
+//     default:
+//       res.setHeader('Allow', ['GET', 'POST', 'PUT', 'DELETE']);
+//       return res.status(405).end(`Method ${req.method} Not Allowed`);
+//   }
+// }
+
+
+
 import { NextApiRequest, NextApiResponse } from 'next';
 import UserService from '../../../../UserServices/UserServices';
 import cors, { runMiddleware } from '../../../../middleware/cors';
